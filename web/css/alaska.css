@@ -1,0 +1,223 @@
+.mainTitle {
+    text-align: center;
+    color: crimson;
+}
+body { 
+    padding-top: 70px;
+    background-color: #E6E6FA;
+}
+
+.col-lg-12 { 
+    line-height: 80px;
+}
+.navbar{
+    height: 80px;
+}
+.navbar-inverse {
+    background-color: #008080;
+ 
+}
+#nav-home{
+    margin-top: 10px;
+    color: black;
+}
+#nav-home:hover{
+    color: #ffffff;
+}
+.blogimg{
+    margin-top: 15px;
+}
+.navbar-header img{
+    margin-top: 15px;
+}
+#lien-accueil{
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#lien-accueil:hover{
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* entete du blog juste sous l'image */
+.blog-header {
+  padding-top:60px;
+  padding-bottom: 20px;
+}
+/* Titre principal Aller simple pour l'Alaska*/
+.blog-title {
+    margin-top: 5px;
+    margin-bottom: 10;
+    font-size: 40px;
+    font-weight: bold;
+    color: #045d65;
+}
+.row{
+    margin-top: 30px;
+}
+.billet-contenu {
+    font-size: 16px;
+}
+/* Titre principal pour le back office	*/
+.backoffice-title {
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: normal;
+    color: #41AED5;
+    text-align: center;
+}
+.col-xs-offset-0{
+   margin-top: 50px;
+   color: #045d65;
+}
+.col-xs-offset-0 .btn
+{
+    background-color: #045d65;
+}
+/* Titre principal pour le  back office	*/
+.admin-title {
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: normal;
+    color: #008080;
+    text-align: center;
+}
+.blog-description {
+   margin-top: -35px;
+}
+.billet-titre{
+    color: #41AED5;
+}
+/* date des commentaires (show.php) */
+.date-comment {
+	font-style: italic;
+}
+/* badge pour le compteur de signalement dans les commentaires */
+.badge-white {
+    background-color:white;
+	color:royalblue;
+}
+/* la couleur bleue pour titre et entete */
+.color-blue {
+    color: #045d65;
+}
+/* même bleu pour le fond */
+.background-blue {
+    background-color: #045d65;
+}
+/* table header */
+.head-table {
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* Ajout un panel 'secondary' pour la vue des articles*/
+.panel-secondary {
+    border-color: #41AED5;
+}
+.panel-secondary > .panel-heading {
+    color: #fff;
+    background-color: #045d65;
+    background: linear-gradient(#045d65, #0093e3);
+    border-color: #045d65;
+}
+.panel-secondary > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #41AED5;
+}
+.panel-secondary > .panel-heading .badge {
+    color: #41AED5;
+    background-color: #fff;
+}
+.panel-secondary > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #41AED5;
+}
+.panel-title-perso {
+    font-size: large;
+    font-weight: bold;
+}
+/* fin du panel personalisé */
+
+/* pour les colonnes du bootstrap */
+[class*="col-"], footer {
+
+    line-height: 40px;
+
+    text-align: center;
+}
+footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+}
+footer{
+    width: 100%;
+    height: 600px;
+    padding-top: 20px;
+    padding-right: 30px;
+    background-color: #045d65;
+   
+    background: linear-gradient(#008080, #cb2a16);
+}
+.ecrivain a{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.ecrivain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.ecrivain img
+{
+    margin-right: 25px;
+    min-width: 180px;
+    height: 300px;
+ 
+}
+.ecrivain p{
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+    word-wrap: break-word;
+    line-height: 40px;
+}
+footer p{
+    text-align: left;
+    padding-right: 20px;  
+ }
+
+.admin-title 
+{
+   margin-top: 30px;
+}
+.signature{
+    width: 130%;
+}
+.modal-body h2{
+        font-size:15px;
+    }
+.modal-body h3, p {
+      font-size:12px;
+      text-align: left;
+      line-height: 20px;
+      color: black;
+}
+.container article a span{
+color: #3742fa;
+font-weight: bold;
+font-style: italic;
+}
+.head-table
+{
+    background-color: #FF7F50;
+}
+
