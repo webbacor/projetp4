@@ -28,7 +28,7 @@ class BilletsController extends AppController{
 
         $title = 'Administrateur';
 
-        $this->render('admin.Billets.index', compact('posts', 'title'));
+        $this->render('Admin.Billets.index', compact('posts', 'title'));
     }
 
 /* Cette fonction ajoute une ligne TITRE dans la table via le modèle (classe BilletTable) si le $_POST est présent.*/
@@ -50,7 +50,7 @@ class BilletsController extends AppController{
         $title = 'Création d\'un billet';
 
         $form = new BootstrapForm($_POST);
-        $this->render('admin.billets.edit', compact('form', 'title'));
+        $this->render('Admin.Billets.edit', compact('form', 'title'));
     }
 
   /* Cette fonction met à jour une ligne EDITION de la table via le modèle (classe BilletTable) si le $_POST est présent.*/
@@ -79,7 +79,7 @@ class BilletsController extends AppController{
         $title = 'Edition d\'un billet';
 
         $form = new BootstrapForm($post);
-        $this->render('admin.billets.edit', compact('form','title'));
+        $this->render('Admin.Billets.edit', compact('form','title'));
     }
 
  /* cette fonction définit la page à déplacer en fonction de l'origine de l'appel (du front office ou du back office)
@@ -96,7 +96,7 @@ class BilletsController extends AppController{
             $link = 'index.php?p='. $_GET['from'] . '&id=' . $_GET['id'];
        /*sinon si $ _GET ['from'] n'est pas défini, l'appel provient du back-office.*/
         } else {
-            $link = 'index.php?p=admin.Billets.index';
+            $link = 'index.php?p=admin.billets.index';
         }
         return $link;
     }

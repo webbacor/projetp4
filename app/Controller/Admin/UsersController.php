@@ -24,7 +24,7 @@ class UsersController extends AppController{
         $users = $this->user->all('name');
 
         $title = 'Administrateur';
-        $this->render('admin.Users.index', compact('users', 'title'));
+        $this->render('Admin.Users.index', compact('users', 'title'));
     }
 
     /*Demander au modèle d'ajouter un enregistrement dans la base de données.
@@ -45,7 +45,7 @@ class UsersController extends AppController{
         $title = 'Création d\'un utilisateur';
 
         $form = new BootstrapForm($_POST);
-        $this->render('admin.users.add', compact('form', 'title'));
+        $this->render('Admin.Users.add', compact('form', 'title'));
     }
 
     /*Modifier un compte utilisateur*/
@@ -75,7 +75,7 @@ class UsersController extends AppController{
         $title = 'Edition d\'un utilisateur';
 
         $form = new BootstrapForm($data);
-        $this->render('admin.users.edit', compact('form', 'title'));
+        $this->render('Admin.Users.edit', compact('form', 'title'));
     }
 
      /*Supprimer un commentaire et revenir à la liste de commentaires de rafraîchissement*/

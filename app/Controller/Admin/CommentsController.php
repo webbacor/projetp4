@@ -27,7 +27,7 @@ class CommentsController extends AppController{
 
         $comments = $this->comment->getCommentsWithReported();
 
-        $this->render('admin.Comments.index', compact('comments', 'title'));
+        $this->render('Admin.Comments.index', compact('comments', 'title'));
     }
 
  /* Modifier un commentaire et revenir à la liste de commentaires de rafraîchissement*/
@@ -48,7 +48,7 @@ class CommentsController extends AppController{
         $title = 'Edition d\'un commentaire';
 
         $form = new BootstrapForm($post);
-        $this->render('admin.comments.edit', compact('form', 'title'));
+        $this->render('Admin.Comments.edit', compact('form', 'title'));
     }
 
     /*Supprimer un commentaire et revenir à la liste de commentaires de rafraîchissement*/
