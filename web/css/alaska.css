@@ -179,7 +179,7 @@ footer{
 {
     margin-right: 25px;
     min-width: 180px;
-    height: 300px;
+    height: 280px;
  
 }
 .ecrivain p{
@@ -221,3 +221,129 @@ font-style: italic;
     background-color: #FF7F50;
 }
 
+
+
+/*================================
+    adaptation (max-width: 998Px)
+==================================*/
+@media all and (max-width: 998px)
+{
+    .navbar-header img
+    {
+        display: none;
+    }
+    #lien-accueil 
+    {
+        font-size: 15px;
+    }
+    #nav-home
+    {
+        font-size: 15px;
+    }
+    .nav {
+        background-color: #008080;
+     
+    }
+    .nav  li
+    {
+        height: 15px; 
+
+    }
+    .col-md-12  img
+    {
+        width: 100%;
+    }
+    .admin-title 
+    {
+        padding-top: 100px;
+    }
+    .col-md-12 img
+    {
+        margin-top: 20px;
+    }
+    .navbar-toggle button
+    {
+        display: none;
+    }
+    .navbar-toggle
+    {
+        display: none;
+    }
+    .head-table tr, td{
+        font-size: 9px;
+    }
+}
+/*================================
+    adaptation (max-width: 766Px)
+==================================*/
+@media all and (max-width: 766px)
+{
+    .nav {
+      
+       height: 120px;
+    }
+    .head-table tr td{
+    max-width: 10px;
+    font-size: 8px;
+    }
+    .col-md-12  img{
+        margin-top: 160px;
+    }
+    footer img{
+        width: 50%;
+        background-color: black;
+    }
+    .ecrivain p{
+        font-size: 12px;
+        line-height: 150%;
+        width: 450px;
+    }
+    .ecrivain {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/*================================
+    adaptation (max-width: 600Px)
+==================================*/
+@media all and (max-width: 600px)
+{
+ 
+        .ecrivain img
+        {
+            width: 50%;
+            height: auto;
+        }
+           .ecrivain p
+        {
+            font-size: 12px;
+           line-height: 150%;
+           width: 250px;
+
+       }
+        .ecrivain p
+        {
+           width: 280px;
+       }
+     
+    }
+      /*================================
+    adaptation (max-width: 525Px)
+==================================*/
+@media all and (max-width: 525px)
+    {
+         .ecrivain p
+        {
+           width: 320px;
+       }
+   }
+    /*================================
+    adaptation (max-width: 420Px)
+==================================*/
+@media all and (max-width: 420px)
+    {
+         .ecrivain p
+        {
+           width: 240px;
+       }
+   }

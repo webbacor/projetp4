@@ -8,15 +8,7 @@ body {
   padding-top: 54px; 
 }
 
-.banner {
-  height: 70vh;
-  min-height: 300px;
-  background: url('https://image.noelshack.com/fichiers/2018/08/3/1519223684-background-banner.jpg') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;*/
-    -o-background-size: cover;
-}
+
 
 .title-id {
   color: #046380;
