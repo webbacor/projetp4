@@ -144,9 +144,7 @@ body {
 
 /* pour les colonnes du bootstrap */
 [class*="col-"], footer {
-
     line-height: 40px;
-
     text-align: center;
 }
 footer {
@@ -175,12 +173,10 @@ footer{
     padding-right: 50px;
     padding-left: 50px;
 }
-.ecrivain img
-{
+.ecrivain img{
     margin-right: 25px;
     min-width: 180px;
     height: 280px;
- 
 }
 .ecrivain p{
     color: #ffffff;
@@ -194,13 +190,15 @@ footer p{
     text-align: left;
     padding-right: 20px;  
  }
-
-.admin-title 
-{
+.admin-title {
    margin-top: 30px;
 }
 .signature{
     width: 130%;
+}
+.reseauxs img {
+    max-width: 23px;
+    height: auto;
 }
 .modal-body h2{
         font-size:15px;
@@ -216,38 +214,35 @@ color: #3742fa;
 font-weight: bold;
 font-style: italic;
 }
-.head-table
-{
+.head-table{
     background-color: #FF7F50;
 }
-
-
+.reseauss{
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
 
 /*================================
     adaptation (max-width: 998Px)
 ==================================*/
 @media all and (max-width: 998px)
 {
-    .navbar-header img
-    {
+    .navbar-header img{
         display: none;
     }
-    #lien-accueil 
-    {
+    #lien-accueil     {
         font-size: 15px;
     }
-    #nav-home
-    {
+    #nav-home{
         font-size: 15px;
     }
-    .nav {
-        background-color: #008080;
-     
+    .nav{
+        background-color: #008080; 
     }
-    .nav  li
-    {
+    .nav  li{
         height: 15px; 
-
     }
     .col-md-12  img
     {

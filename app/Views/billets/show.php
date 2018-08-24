@@ -71,7 +71,7 @@ if (!empty($_POST)){
 	<div class="alert alert-info">
 		<?php
 		// utilisation de la classe IntlDateFormatter pour obtenir une "date française"
-		$mask = "EEEE d MMMM YYYY '&agrave;' HH:mm ";
+		$mask = "EEEE d MMMM YYYY ";
 
 		$date = new DateTime($comment->commentDate);
 		

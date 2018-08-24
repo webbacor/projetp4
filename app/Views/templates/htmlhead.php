@@ -1,6 +1,6 @@
 <head>
 
-     <meta charset="utf-8 without bom">
+     <meta charset="utf-8 ">
      <meta name="description" content="billet simple pour l'Alaska" />
     <title>J Forteroche</title>
   

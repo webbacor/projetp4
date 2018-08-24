@@ -17,21 +17,32 @@
   
     </div>
 
-    <img src="img/signature.png" alt="signature"/>
-       
-  <br/>
- <img src="img/livreban.png" alt="livre footer"><br/>
-<button data-toggle="modal" href="#infos" class="btn btn-primary">Mentions Légales</button>
+    <div class="sigNature">
+                <img src="img/xl_livre.png" alt="livre footer"> <img src="img/signature.png" alt="signature"/> 
+    </div>
+        <br/>
+        <button data-toggle="modal" href="#infos" class="btn btn-primary">*    Mentions Légales      *</button>
 
+   
         <?php 
         require '../web/mentions.php';
         ?>
 
-<button data-toggle="modal" href="#infop" class="btn btn-primary">Politique de confidentilité</button>
+        <button data-toggle="modal" href="#infop" class="btn btn-primary">*Politique de confidentilité*</button>
 
       <?php 
         require '../web/pconfid.php';
         ?>
         
- <br/>
+
+
+  <dir class= "reseauxs">
+    <a href="https://www.facebook.com/"><img src="img/Noir/noir-facebook.png" alt="facebook" ></a>
+    <a href="https://twitter.com/login?lang=fr"><img src="img/Noir/noir-twitter.png" alt="twitter" ></a>
+    <a href="http://www.hellocoton.fr/connexion"><img src="img/Noir/noir-hellocoton.png" alt="hellocoton" ></a>
+    <a href="https://www.instagram.com/accounts/login/?hl=fr"><img src="img/Noir/noir-instagram.png" alt="instagram" ></a>
+    <a href="https://www.pinterest.fr/login/"><img src="img/Noir/noir-pinterest.png" alt="pinterest" ></a>
+    <br/>
+</dir>
+
 </footer>
