@@ -176,7 +176,7 @@ footer{
 .ecrivain img{
     margin-right: 25px;
     min-width: 180px;
-    height: 280px;
+    max-height: 250px;
 }
 .ecrivain p{
     color: #ffffff;
