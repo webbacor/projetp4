@@ -4,15 +4,15 @@ namespace App\Controller;
 
 use Core\Controller\Controller;
 
-/* La classe BilletsController est le contrôleur des billets et Commentaire 
-  son role est d'obtenir des données du modèle et de les transférer à la vue
-  Extends ajoute une vérification d'authentification 
+/*The TicketsController class is the ticket controller and Commentary
+  its role is to get data from the model and transfer it to the view
+  Extends adds authentication verification
  */
 
 class BilletsController extends AppController {
 
-    /* Constructeur BilletsController.
-      Définir le chemin de vue et le modèle via le constructeur parent et les modèles de chargement requis par ce contrôleur. */
+    /* Builder TicketsController.
+      Define the view path and model via the parent constructor and load templates required by that controller.*/
 
     public function __construct() {
         parent::__construct();
@@ -22,11 +22,11 @@ class BilletsController extends AppController {
         $this->loadModel('report');
     }
 
-    /*Cette fonction obtient toutes les lignes avec le statut 'Publié' du modèle BilletTable et les données de transfert arrivent à la vue.
+    /*This function gets all lines with the 'Published' status of the TicketTable template and the transfer data arrives at the view.
      */
     public function index() {
 
-        // direction de la commande par (ASC ou DESC) pour la liste des billets.
+       // direction of the order by (ASC or DESC) for the ticket list.
         $direction = 'ASC';
 
         if (isset($_POST['sortBy'])) {
@@ -41,7 +41,7 @@ class BilletsController extends AppController {
         $this->render('billets.index', compact('posts'));
     }
 
-    //affiche un billet et ses commentaires
+    //post a ticket and its comments
      
     public function show() {
 
@@ -55,11 +55,11 @@ class BilletsController extends AppController {
         $this->render('billets.show', compact('billet','comments', 'title'));
     }
 
-	/*Ajouter un commentaire et actualiser la liste des commentaires */
+	/*Add a comment and update the comment list */
 	public function addComment() {
 		
 		$this->comment->add($_GET['id'], $_GET['userID'], $_GET['comment']);
-		//Actualiser les données.
+		//Refresh data.
 		$this->show();
 	}
 }

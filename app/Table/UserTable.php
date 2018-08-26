@@ -3,17 +3,16 @@ namespace App\Table;
 
 use Core\Table\Table;
 
-//UserTable est le modèle de l'entité utilisateur
+// UserTable is the model of the user entity
  class UserTable extends Table
 {
 
-    //$ table nom de la table dans la base de données
-     
+    // $ table name of the table in the database
     protected $table = 't_user';
 
-    //Test si le nom existe dans la table des utilisateur
-     //$name nom des la table
-     //return boolean true sif exist sinon false
+    // Test if the name exists in the user table
+     // $ name name of the table
+     // return boolean true sif exist otherwise false
     
     public function nameExists($name)
     {

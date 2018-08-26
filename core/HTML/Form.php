@@ -1,31 +1,31 @@
 <?php
 namespace Core\HTML;
 
-//Formulaire de classe
-//Utiliser pour générer un formulaire rapidement et facilement.
+// Class form
+// Use to generate a form quickly and easily.
 class Form{
 
-    //$data données utilisées par formulaire
+    //$data données u// $ data data used by formtilisées par formulaire
     private $data;
 
-    //Tag utilisé pour entourer les champs
+    // Tag used to surround the fields
     public $surround = 'p';
 
-    //constructeur de formulaire
+    // form constructor
     public function __construct($data = array()){
         $this->data = $data;
     }
 
 
-    //Cette fonction entoure un code HTML.
-    //$html Code HTML à entourer
-    //retour chaîne
+    // This function surrounds an HTML code.
+    // $ html HTML code to surround
+    // return string
     protected function surround($html){
         return "<{$this->surround}>{$html}</{$this->surround}>";
     }
 
-    //récupérer la valeur d'un tableau ou la valeur d'une propriété d'objet
-    //Retour chaine ou null (en cas d'index inexistant)
+    // retrieve the value of an array or the value of an object property
+    // return string or null (if there is no index)
     public function getValue($index){
 
         if(is_object($this->data)){
@@ -35,11 +35,11 @@ class Form{
     }
 
 
-    //cette fonction crée un champ de saisie avec libellé et options
-    //$name nom de la propriété de l'entrée
-    //$label laber de l'entrée
-    //array  options : options pour l'entrée (par exemple: text, textarea, radio etc ...)
-    //retour chaîne
+    // this function creates an input field with labels and options
+    // $ name name of the property of the entry
+    // $ label laber of the entry
+    // array options: options for the input (for example: text, textarea, radio etc ...)
+    // return string
     public function input($name, $label, $options = []){
         $type = isset($options['type']) ? $options['type'] : 'text';
         return $this->surround(
@@ -47,8 +47,8 @@ class Form{
         );
     }
 
-    //creation d'un bouton submit*
-    //retour chaine
+    //create a submit button *
+    //return chaine
     public function submit(){
         return $this->surround('<button type="submit">Envoyer</button>');
     }

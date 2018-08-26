@@ -5,20 +5,19 @@ namespace App\Controller;
 use Core\Controller\Controller;
 use \App;
 
-/**Class AppController est le contrôleur d'application du front office
-Extends ajoute une vérification d'authentification  */
+/** Class AppController is the front office application controller
+Extends adds authentication verification*/
 class AppController extends Controller{
 
     /* Constructeur AppController.
-     * définir le chemin de vue et le modèle
-     */
+     * define the path of view and the modele     */
     public function __construct(){
 
         $this->viewPath = ROOT . '/app/Views/';
 		$this->template = 'default';
     }
 
-//creation d'une instance de modèle via l'application App-> getTable ()
+// create a model instance via App-> getTable ()
         
     protected function loadModel($model_name){
         $this->$model_name = App::getInstance()->getTable($model_name);

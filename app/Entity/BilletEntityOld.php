@@ -1,30 +1,31 @@
 <?php
 
-/nom de package 
+ 
 namespace App\Entity;
 
-//utiliser :
+//use
 use Core\Entity\Entity;
 
-/*Class BilletEntity est utilisé comme objet de transfert de données pour l'entité Billet. */
+/*Class BilletEntity is used as a data transfer object for the Billet entity. */
 class BilletEntity Extends Entity {
+
     // id Billet id.
      protected $id;
 
-    // titre Billet 
+    // title Billet 
     protected $title;
 
-    //Commentaire Billet 
+    //Comment Billet 
     protected $content;
 
-    //chapitre du billet
+    //chapter billet
     protected $chapter;
     
     //URL du billeT
     private $url;   
     
 	
-//les getters et setters
+//getters & setters
     public function getId() {
         return $this->id;
     }

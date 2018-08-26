@@ -2,7 +2,6 @@
 namespace Core\Database;
 
 
-//Base de données de classes utile en cas d'implémentation d'une quelconque base de données autre que MySQL.
-
+// Useful class database when implementing any database other than MySQL.
 class Database{
 }

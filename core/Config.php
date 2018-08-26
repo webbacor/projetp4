@@ -2,18 +2,18 @@
 
 namespace Core;
 
-//Classe Config gère les paramètres de configuration de l'application
+//Config class manages application configuration settings
 class Config
 {
-    //$setting contient tous les paramètres
+    // $ setting contains all parameters
     private $settings = [];
 
-    //$_instance est l'instance de la classe
+    //$_instance is the instance of the class
     private static $_instance;
 
-    // modèle de conception singleton pour cette classe.
-    //$file le fichier contenant les paramètres.
-    //return Config $ _instance
+    //  singleton design pattern for this class.
+    // $ files the file containing the parameters.
+    // return Config $ _instance
     public static function getInstance($file)
     {
         if (is_null(self::$_instance)) {
@@ -23,16 +23,16 @@ class Config
     }
 
 
-    //Constructeur de configuration.
-    //$file le fichier contenant les paramètres.
+    // Configuration builder.
+    // $ files the file containing the parameters.
     public function __construct($file)
     {
         $this->settings = require($file);
     }
 
 
-    //renvoie la valeur de la clé $key (ou null si elle n'est pas définie)
-    //$ key la clé pour trouver dans la configuration d'une aire []
+    // return the value of the key $ key (or null if it is not defined)
+    // $ key the key to find in the configuration of an area []
     // @return mixed | null
     public function get($key)
     {

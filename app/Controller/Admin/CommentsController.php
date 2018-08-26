@@ -4,13 +4,13 @@ namespace App\Controller\Admin;
 
 use Core\HTML\BootstrapForm;
 
-/*Class Comments Controller est le contrôleur pour l'entité Commentaires
- son rôle est d’obtenir des données du modèle et de les transférer pour la visualistion*/
+/*Class Comments Controller is the controller for the entity Comments
+ its role is to obtain data from the model and transfer it for visualization*/
 
 class CommentsController extends AppController{
 
-   /* Constructeur CommentsController.
-     Définir le chemin de vue et le modèle via le constructeur parent et les modèles de chargement requis par ce contrôleur.
+   /* Constructor CommentsController.
+     Define the view path and model via the parent constructor and load templates required by that controller.
      */
 
     public function __construct(){
@@ -19,7 +19,7 @@ class CommentsController extends AppController{
         $this->loadModel('report');
     }
 
-    /*  * Demander tous les commentaires avec le compteur signalé du modèle et transmettre les données arriver à la vue. */
+    /*  Request all comments with the reported counter of the model and transmit the data to the view. */
 
     public function index(){
 
@@ -30,7 +30,7 @@ class CommentsController extends AppController{
         $this->render('Admin.Comments.index', compact('comments', 'title'));
     }
 
- /* Modifier un commentaire et revenir à la liste de commentaires de rafraîchissement*/
+ /* Edit a comment and return to the refresh comment list*/
     public function edit(){
         if (!empty($_POST)) {
             $result = $this->comment->update($_GET['comId'], [
@@ -51,7 +51,7 @@ class CommentsController extends AppController{
         $this->render('Admin.Comments.edit', compact('form', 'title'));
     }
 
-    /*Supprimer un commentaire et revenir à la liste de commentaires de rafraîchissement*/
+    /*Delete a comment and return to the refresh comment list*/
 
     public function delete(){
         if (!empty($_POST)) {
@@ -60,18 +60,18 @@ class CommentsController extends AppController{
         }
     }
 
-   /* cette fonction définit la page à déplacer en fonction de l'origine de l'appel (du front office ou du back office)
+   /* this function defines the page to move according to the origin of the call (front office or back office)
      *
-     * return $link URL du lien pour la redirection.
+     * return $ link URL of the link for the redirection.
      */
     public function getLocation() {
 
         $link = '';
 
-         // si l'appel par administrateur depuis le front office $ _GET ['from'] est défini.
+         // if the administrator call from the front office $ _GET ['from'] is set.
         if (isset($_GET['from'])) {
             $link = 'index.php?p='. $_GET['from'] . '&id=' . $_GET['billetId'];
-         /*sinon si $ _GET ['from'] n'est pas défini, l'appel provient du back-office.*/
+         /*otherwise if $ _GET ['from'] is not defined, the call comes from the back office.*/
         } else {
             $link = 'index.php?p=admin.comments.index';
         }

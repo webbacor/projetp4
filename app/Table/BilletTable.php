@@ -3,15 +3,15 @@ namespace App\Table;
 
 use Core\Table\Table;
 
-// modèle de l'entité Billet
+// model of the ticket entity
  class BilletTable extends Table{
 
-   //nom de la table dans la base de données
+   // name of the table in the database
     protected $table = 't_billet';
 
-    //retourner toute la ligne où le statut est "Publié"; 
-     //$way façon dont va etre traité la commande par (ASC ou DESC)
-     //Return pour tableau de BilletEntity
+    // return the entire line where the status is "Published";
+     // $ way how will the command be handled by (ASC or DESC)
+     // Return for BilletEntity table
    
     public function getPublished($way = 'ASC'){
         $sql = "SELECT * 
@@ -21,9 +21,9 @@ use Core\Table\Table;
         return $this->query($sql, ['Publié']);
     }
 
-    //Obtenir un «billet» spécifique de la base de données
-    //$id dans l'id de la ligne
-    //return \ App \ Entity \ BilletEntity ou null si non trouvé
+    // Get a specific "ticket" from the database
+    // $ id in the id of the line
+    // return \ App \ Entity \ TicketEntity or null if not found
     
     public function find($id){
 		return $this->query("		

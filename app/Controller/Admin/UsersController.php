@@ -5,19 +5,19 @@ namespace App\Controller\Admin;
 use Core\HTML\BootstrapForm;
 
 /*
- Class UsersController est l'entité contrôleur pour les utilisateurs
- son rôle est d’obtenir des données du modèle et de les transférer à la vue
- Extends ajoute une vérification d'authentification 
+ Class UsersController is the controller entity for users
+ its role is to get data from the model and transfer them to the view
+ Extends adds authentication verification
  */
 class UsersController extends AppController{
 
-    /* Définir le chemin de vue et le modèle via le constructeur parent et les modèles de chargement requis par ce contrôleur.*/
+    /* Define the view path and model via the parent constructor and load templates required by that controller.*/
     public function __construct(){
         parent::__construct();
         $this->loadModel('user');
     }
 
-/* Demander à tous les utilisateurs du modèle et transmettre les données arriver à la vue.*/
+/* Ask all users of the model and transmit the data to the view.*/
      
     public function index() {
 
@@ -27,7 +27,7 @@ class UsersController extends AppController{
         $this->render('Admin.Users.index', compact('users', 'title'));
     }
 
-    /*Demander au modèle d'ajouter un enregistrement dans la base de données.
+    /*Ask the model to add a record to the database.
      */
     public function add(){
         if (!empty($_POST)) {
@@ -48,14 +48,14 @@ class UsersController extends AppController{
         $this->render('Admin.Users.add', compact('form', 'title'));
     }
 
-    /*Modifier un compte utilisateur*/
+    /*Edit a user account*/
 
     public function edit(){
 
         if (!empty($_POST)) {
 
             $fields =  ['name' => $_POST['name'],
-                       //['email' => $_POST['email'],
+                     
                         'role' => $_POST['role'],
                         'isLocked' => 0];
 
@@ -78,7 +78,7 @@ class UsersController extends AppController{
         $this->render('Admin.Users.edit', compact('form', 'title'));
     }
 
-     /*Supprimer un commentaire et revenir à la liste de commentaires de rafraîchissement*/
+     /*Delete a comment and return to the refresh comment list*/
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->user->delete($_POST['id']);

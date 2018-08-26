@@ -3,16 +3,16 @@ namespace App\Table;
 
 use Core\Table\Table;
 
-//La classe CommentTable est le modèle de l'entité de commentaires
+// The CommentTable class is the comment entity model
 
 class CommentTable extends Table{
 
-    //$ table nom de la table dans la base de données
+    // $ table name of the table in the database
     protected $table = 't_comment';
 
-    //Obtenez les commentaires d'un billet
-    //$id id de la 'billette'
-    //Retour tableau de commentEntity
+    // Get comments on a ticket
+    // $ id id of the 'billet'
+    // return commentEntity table
     
     public function getComments($id){
 		return $this->query("		
@@ -34,8 +34,8 @@ class CommentTable extends Table{
 		$res = $this->create($sSql);
 	}
 
-    // obtenir les commentaires avec (ou sans) le nombre de commentaires rapportés et le nom de l'auteur.
-    //return un objet Array dans commentEntity.
+    // get comments with (or without) the number of comments reported and the name of the author.
+    // return an Array object in commentEntity.
    
     public function getCommentsWithReported(){
 	    return $this->query("

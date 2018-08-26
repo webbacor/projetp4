@@ -3,17 +3,17 @@ namespace App\Table;
 
 use Core\Table\Table;
 
-//ReportTable est le modèle de l'entité Report
+//ReportT// ReportTable is the report entity model
 class ReportTable extends Table{
 
-    //$table nom de la table dans la base de données
+    // $ table name of the table in the database
      
     protected $table = 't_report';
  
-	//Ajouter un rapport
-    //$comId commentaire id
-    //$usrId ID utilisateur
-    //return booléen le résultat de la requête
+	// Add a report
+    // $ comId comment id
+    // $ usrId user ID
+    // return boolean the result of the query
 
 	public function add($comID, $userID){
 		
@@ -27,9 +27,9 @@ class ReportTable extends Table{
 		return $res;				
 	}
 	
-	//Annuler un rapport (supprimer)
-    //$reportID l'id du rapport
-    //Return booléen le résultat de la requête
+	// Cancel a report (delete)
+    // $ reportID the id of the report
+    // return boolean the result of the query
 	public function cancel($reportID){
 		
 		$res = $this->delete($reportID);				
@@ -37,10 +37,10 @@ class ReportTable extends Table{
 	}
 	
 
-	//Tester si un rapport existe pour ce commentaire et l'utilisateur actuel
-	//$comID id de commentaire
-	//$usrId ID utilisateur
-	//Return int / false l'identifiant du rapport s'il existe ou pas.
+	// Test if a report exists for this comment and the current user
+	// $ comID comment id
+	// $ usrId user ID
+	// Return int / false the identifier of the report if it exists or not.
 	
 	public function isReported($comID, $userID){
 		
@@ -56,9 +56,9 @@ class ReportTable extends Table{
 		}		
 	}
 
-	//retourne la totalité des rapports pour un commentaire
-	//$comId commentaire id
-    //return totalite du rapport pour ce commentaire
+	// return all the reports for a comment
+	// $ comId comment id
+    // return the whole report for this comment
 	public function totalReported ($comId){
 		
 		$reports = $this->query("		

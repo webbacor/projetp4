@@ -6,16 +6,17 @@ use Core\Entity\Entity;
 
 
 class ReportEntity Extends Entity {
+
     //Id rapport commentaire
     protected $id;
     
     //Id commentaire
     protected $com_id;
 	
-    //id dans le journal 
+    //id in the newspaper
     protected $usr_id;
 	
-	//date dans le rapport 
+	//date in the report 
     protected $reportDate;
 	
 

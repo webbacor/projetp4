@@ -2,13 +2,13 @@
 
 namespace Core\Entity;
 
-/*la classe mère pour toutes les classes 'entité' (mappage entre un objet et une table dans la base de données).
+/*the parent class for all 'entity' classes (mapping between an object and a table in the database).
  */
 class Entity {
 
-    /*Utiliser la méthode "magic" _get pour envoyer la clé via le getter ( renvoyer une valeur sans rien faire d'autre. Il peut aussi modifier ou ajuster une valeur avant de la renvoyer. ) le getter doit exister
-    $key
-    return mixed  */
+    /*Use the "magic" _get method to send the key via the getter (return a value without doing anything else, it can also modify or adjust a value before returning it.) The getter must exist
+    $ key
+    return mixed*/
 
     public function __get($key){
         $method = 'get' . ucfirst($key);

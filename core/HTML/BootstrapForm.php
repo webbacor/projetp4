@@ -2,13 +2,13 @@
 namespace Core\HTML;
 
 //ClassBootstrapForm
-//classe de formulaire avec la classe bootstrap
+//form class with the bootstrap class
 class BootstrapForm extends Form {
 
-  //cette fonction entoure un code html avec la classe bootstrap en div ou span
-      //$html Code HTML à entourer
-      //$tag type d'ambiance ex div, span etc.
-      //retour chaîne
+  //this function surrounds an html code with the bootstrap class in div or span
+      // $ html HTML code to surround
+      // $ environment type tag ex div, span etc.
+      // return string
     protected function surround($html, $tag = 'div'){
         if($tag === 'div'){
             return "<div class=\"form-group\">{$html}</div>";
@@ -16,13 +16,13 @@ class BootstrapForm extends Form {
             return "<span class=\"form-group\">{$html}</span>";
         }
     }
-//cette fonction crée un champ de saisie avec libellé et options avec contrôle de formulaire de classe bootstrap
+//this function creates an input field with labels and options with bootstrap class form control
     
-      //$name nom du champ
-      //$label label du champ
-      //Array $options : options pour l'entrée (par exemple: text, textarea etc ...)
-      //boolean $required indique si le champ nécessite l'attribut requis.
-      //retour chaîne
+      // $ name field name
+      // $ label label of the field
+      // Array $ options: options for the entry (for example: text, textarea etc ...)
+      // boolean $ required indicates whether the field requires the required attribute.
+      // return string
      
     public function input($name, $label, $options = [], $required = false){
         $type = isset($options['type']) ? $options['type'] : 'text';
@@ -43,11 +43,11 @@ class BootstrapForm extends Form {
     }
 
 
-//Cette fonction crée un champ select avec label et options avec la classe bootstrap.
-     // $Name nom du champ
-     //$label label du champ
-     //Array $options : options (contenu de la liste) pour la sélection
-     //retour chaîne
+//This function creates a select field with label and options with the bootstrap class.
+     // $ Name field name
+     // $ label label of the field
+     // Array $ options: options (list contents) for selection
+     // return string
     public function select($name, $label, $options){
         $label = '<label>' . $label . '</label>';
         $input = '<select class="form-control" name="' . $name . '">';
@@ -62,7 +62,7 @@ class BootstrapForm extends Form {
         return $this->surround($label . $input);
     }
 
-    //Créer un bouton de soumission avec la classe bootstrap 
+    //Create a submit button with the bootstrap class
     public function submit(){
         return $this->surround('<button type="submit" class="btn btn-primary">Envoyer</button>');
     }

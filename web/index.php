@@ -1,27 +1,27 @@
 <?php
 
-// définit le chemin racine de l'application
+/// define the root path of the application
 define('ROOT', dirname(__DIR__));
 
 
-// initialisation application
+// initialization application
 require ROOT . '/app/App.php';
 App::load();
 
-  // verifie si un parametre de page existe
+  // check if a page parameter exists
     if(isset($_GET['p'])){
-         //paramètre la variable $page si un paramètre de page existe ($ _GET ['p'])
+         // set the $ page variable if a page parameter exists ($ _GET ['p'])
        $page = $_GET['p'];
     }else{
-    //page par défaut si aucun paramètre.
+    // default page if no parameters.
         $page = 'Billets.index';
     }
 
-   /* détermine le chemin, le contrôleur et l’action (fonction à appeler).
-    le masque pour l'url possède les 2 masques possibles suivants:
-    path.controllerName.action par exemple: admin.billet.index
-    ou controllerName.action par exemple: billet.index*/
-$page = explode('.', $page); //retourne le tableau des chaines
+   /* determines the path, controller, and action (function to call).
+    the mask for the url has the following 2 possible masks:
+    path.controllerName.action for example: admin.billet.index
+    or controllerName.action for example: billet.index */
+$page = explode('.', $page); //return the chain table
     if($page[0] == 'admin'){
        $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
        $action = $page[2];
@@ -31,7 +31,7 @@ $page = explode('.', $page); //retourne le tableau des chaines
     }
 
 
-// création et action du contrôleur nécessaire.
+// creation and action of the necessary controller.
 $controller = new $controller();
 $controller->$action();
 

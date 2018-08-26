@@ -4,8 +4,9 @@ namespace App\Entity;
 
 use Core\Entity\Entity;
 
-//classes utile en cas d'implémentation d'une quelconque base de données autre que MySQL.
-//Extends ajoute une vérification d'authentification */
+//classes useful when implementing any database other than MySQL.
+// Extends adds an authentication check 
+
 class UserEntity Extends Entity {
 
 }

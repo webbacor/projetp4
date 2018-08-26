@@ -4,7 +4,7 @@
     <button class="btn btn-success">Sauvegarder</button>
 
     <?php
-    // récupère le lien pour la redirection
+    // get the link for redirection
     $link = $this->getLocation();
     ?>
     <a class="btn btn-primary" href="<?=$link;?>">Annuler</a>

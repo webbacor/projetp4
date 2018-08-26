@@ -1,5 +1,5 @@
 <?php
-// Ajouter un commentaire si posté
+// Add a comment if posted
 if (!empty($_POST)){
 
 	$commentTable = app::getInstance()->getTable('comment');
@@ -14,7 +14,7 @@ if (!empty($_POST)){
 	$comments = $commentTable->getComments($_GET['id']);
 }
 ?>
-    <!-- panneau pour le chapitre -->
+    <!-- panel for the chapter -->
     <div class="panel panel-secondary">
         <div class="panel-heading ">
             <span class ="panel-title panel-title-perso"><?= $billet->getTitle(); ?></span>
@@ -24,7 +24,7 @@ if (!empty($_POST)){
             <p class="billet-contenu"><?= $billet->getContent(); ?></p>
         </div>
 
-        <!-- Edition lien pour l'administrateur -->
+        <!-- Edit link for the administrator-->
         <?php
         if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
             <div class="panel-footer">
@@ -33,10 +33,10 @@ if (!empty($_POST)){
                 </a>
             </div>
         <?php } ?>
-    </div> <!-- fin du panneau -->
+    </div> <!-- end of the panel-->
 
 	<?php
-    // publier un commentaire disponible uniquement pour les utilisateurs authentifiés
+    // post a comment only available to authenticated users
 	if (isset($_SESSION['auth'])){?>
         <form method="post">
             <input type="hidden" name="usrID" value="<?=$_SESSION['auth']?>">
@@ -49,12 +49,12 @@ if (!empty($_POST)){
         </form>
         <br/>
     <?php } else {
-	// si l'utilisateur n'est pas authentifié, il a un lien pour le faire.
+	// if the user is not authenticated, he has a link to do it.
 		$param = "?p=users.login&billetId=" .$billet->getId(); ?>
 		<div class="alert alert-warning">Vous devez être connecté pour poster un commentaire. <a href="<?php echo $param ; ?>" class="btn btn-warning"></span> Connexion</a>
 		</div>
 	<?php } ?>
-    <!--Total commentaires-->
+    <!--Total comments-->
 	<div class="alert alert-success">
 		<?php
 		$totalComments = count($comments);
@@ -66,11 +66,11 @@ if (!empty($_POST)){
 			<strong><?= $totalComments . ' ' .  $commentSpell ?></strong>
 	</div>
 
-	<!-- boucles de commentaires -->
+	<!-- feedback loops -->
 	<?php foreach ($comments as $comment): ?>
 	<div class="alert alert-info">
 		<?php
-		// utilisation de la classe IntlDateFormatter pour obtenir une "date française"
+		// use the IntlDateFormatter class to get a "French date"
 		$mask = "EEEE d MMMM YYYY ";
 
 		$date = new DateTime($comment->commentDate);
@@ -88,13 +88,13 @@ if (!empty($_POST)){
 		
 		<p>
 		<?php
-		// Pour signaler un commentaire, l'utilisateur doit être connecté
+		// To post a comment, the user must be logged in
 		if (isset($_SESSION['auth'])) {
 			
-			// Nombre total de rapports pour ce commentaire
+			// Total number of reports for this comment
 			$total = $this->report->totalReported($comment->getComId());
 			
-			// Est-ce que l'utilisateur rapporte déjà ce commentaire?
+			// Is the user already reporting this comment?
 			$reportId = $this->report->isReported($comment->comId, $_SESSION['auth']);
 			
 			if ($reportId) {
@@ -111,12 +111,12 @@ if (!empty($_POST)){
 			<?php
 			} ?> 		
 		
-			<!-- total rapport -->
+			<!-- total report -->
 			<span class="badge badge-white" data-toggle="tooltip" data-placement="right"
                   title="Nombre de signalement pour ce commentaire">
             <?= $total ?></span>
 
-            <!-- Modifier le lien pour admin -->
+            <!-- Edit the link for admin-->
             <?php
                 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
                 <div>
@@ -125,10 +125,11 @@ if (!empty($_POST)){
                         <span class="glyphicon glyphicon-edit"></span> Editer
                     </a>
                 </div>
-            <?php } // fin utilisateur administrateur ?>
+            <?php } // end user administrator ?>
 
-        <?php } // fin connection utilisateur ?>
+        <?php } // end user connection ?>
 
 		</p>
 	</div>
-	<?php endforeach // fin boucle des commentaires?>
+	<?php endforeach // end loop comments
+	?>

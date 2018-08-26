@@ -15,22 +15,22 @@
     
    
 
-  <!-- régler la mise en page par rapport aux tailles/résolutions d'écrans -->
+  <!-- adjust the layout to screen sizes / resolutions-->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>  
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
        
-<!-- pour optimiser le réferencement-->
+<!--to optimize referencing-->
     <meta name="keywords" content="billet simple pour l'Alaska, Jean Forteroche" />
     <meta name="author" content="Jean Forteroche" />
     
- <!-- OpenGraph (pour optimiser le réferencement)FACEBOOK-->
+ <!-- OpenGraph (to optimize the referencing) FACEBOOK-->
     <meta property="og:title" content="billet simple pour Alaska Jean Forteroche"/>
     <meta property="og:type" content="website"/>
     <meta property="og:description" content="billet simple pour Alaska Jean Forteroche, ecrivain, blog, commentaires" />
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
    
- <!-- OpenGraph (pour optimiser le réferencement)TWITTER  -->
+ <!-- OpenGraph (to optimize the referencing) TWITTER -->
       <meta name=”twitter:card” content="summary" />
       <meta name=”twitter:site” content="" />
       <meta name=”twitter:title” content="billet simple pour Alaska Jean Forteroche" />

@@ -12,7 +12,7 @@
     
 <body>
     <?php 
-        require 'frontNav.php';//appel connection users/admin.
+        require 'frontNav.php';//call connection users / admin.
     ?>
 
     <div class="container">
@@ -21,7 +21,7 @@
                 <img src="img/alaska1.png" alt="Alaska">    
             </div>
         </header>
-    </div><!-- fin container -->    
+    </div><!-- end container -->    
     
     <div class="container">
         <div class="blog-header">
@@ -36,11 +36,11 @@
                 <div class="blog-description  col-xs-12 col-md-5 col-lg-4"><img src="img/livre2.png" alt="livre"></div>
                 <div class ="col-xs-offset-0  col-xs-12 col-md-offset-1 col-md-6 col-lg-offset-3 col-lg-4 ">
 
-                    <!--formulaire classement articles - trier-->
+                    <!--form sorting articles - sort-->
                     <form action="?p=billets.index" method="post" style="display: inline;">
         
                         <?php
-                        //Gérer la valeur de select SortBy et sortDirection
+                        //Manage the value of select SortBy and sortDirection
                          
                             $AscSelected = '';
                             $DescSelected = '';
@@ -77,7 +77,7 @@
     <!-- MAIN CONTENT --------------------------------------------------------------------------------------------->
     <div class="container">
 		<?= $content; ?>
-	</div><!-- fin container -->
+	</div><!-- end container -->
 
 <?php
 require ('htmlfooter.php');

@@ -1,4 +1,4 @@
-<!--affichage pour edition des utilisateurs-->
+<!--display for user edition-->
 <form method="post">
     <?= $form->input('name', 'Nom ou Pseudo *', null, true); ?>
     

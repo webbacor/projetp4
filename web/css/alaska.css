@@ -197,7 +197,7 @@ footer p{
     width: 130%;
 }
 .reseauxs img {
-    max-width: 23px;
+    max-width: 20px;
     height: auto;
 }
 .modal-body h2{
@@ -235,6 +235,9 @@ font-style: italic;
     #lien-accueil     {
         font-size: 15px;
     }
+     #lien-accueil:hover{
+        font-size: 15px;
+    }
     #nav-home{
         font-size: 15px;
     }
@@ -266,6 +269,9 @@ font-style: italic;
     }
     .head-table tr, td{
         font-size: 9px;
+    }
+    .form-group label {
+        font-size: 15px;
     }
 }
 /*================================

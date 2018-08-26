@@ -1,28 +1,28 @@
 <?php
 
-//Package namespace Alaska\src\DAO;
+// Package namespace Alaska \ src \ DAO;
 
-//classe Abstraite  DAO pour lier les tables
-// aide https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26830-lier-ses-tables-avec-des-objets-java-le-pattern-dao
+// Abstract CAD class to bind tables
+// help https://openclassrooms.com/en/courses/26832-learn-to-program-in-java/26830-beyond-sets-with-java-the-pattern-dao-objects
 abstract class DAO 
 {
-    // Connexion à la base de données
+    // Login to the database
     private $db;
 
-    //constructeur 
-    //Objet de connexion à la base de données
+    // constructor
+    // Object of connection to the database
     public function __construct(PDO $db) {
         $this->db = $db;
     }
 
-    //Donne accès à l'objet de connexion à la base de données
-    //return objet PDO Objet de connexion à la base de données
+    // Give access to the connection object to the database
+    // return PDO object Connection object to the database
     
     protected function getDb() {
         return $this->db;
     }
 
-    //Construit un objet de domaine à partir d'une ligne de base de données.
-    //Doit être remplacé par les classes enfants.
+    // Build a domain object from a database row.
+    // Must be replaced by the child classes.
     protected abstract function buildDomainObject(array $row);
 }

@@ -4,8 +4,7 @@ namespace Core\Database;
 use \PDO;
 use PDOException;
 
-// creation de la classe pour l'accés à la base de données
- 
+// creation of the class for access to the database
 class MysqlDatabase extends Database {
 
     private $db_name;
@@ -24,7 +23,7 @@ class MysqlDatabase extends Database {
         $this->db_host = $db_host;
     }
 
-    /*retourner une instance de PDO */
+    /*return an instance of PDO */
     private function getPDO(){
         if($this->pdo === null) {
             try {
@@ -43,11 +42,11 @@ class MysqlDatabase extends Database {
     }
 
     /*
-     * Exécute la fonction de requête pdoExecutes the pdo query function
-        traitement de la requete SQL
-        $class_name class le nom de la classe pour PDO::FETCH_CLASS (à envoyer)
-        $one récupère (un si $one est vrai sinon tout)
-        return (array, bool ou mixed)
+     * Execute the pdoExecutes query function the pdo query function
+        processing the SQL query
+        $ class_name class the name of the class for PDO :: FETCH_CLASS (to send)
+        $ one recovers (one if $ one is true if not all)
+        return (array, bool or mixed)
      */
     public function query($statement, $class_name = null, $one = false){
         $req = $this->getPDO()->query($statement);
@@ -71,14 +70,14 @@ class MysqlDatabase extends Database {
         return $data;
     }
 
-    /* préparer et executer la fonction PDO
-            aide dans  http://php.net/manual/en/pdo.prepare.php
+    /* Prepare and execute the PDO function
+            help in en http://php.net/manual/en/pdo.prepare.php
             et http://php.net/manual/en/pdostatement.fetch.php
-     $statement la requete SQL pour préparer la fonction de PDO
-     $attributes, les attributs pour la fonction exécuter de PDO
-     $class_name, le nom de la class pour PDO::FETCH_CLASS à envoyer
-     bool $one récupère (un si $one est vrai sinon tout)
-     * @return array|bool|mixed
+     $ statement the SQL query to prepare the PDO function
+     $ attributes, the attributes for the PDO run function
+     $ class_name, the class name for PDO :: FETCH_CLASS to send
+     bool $ one recovers (one if $ one is true if not all)
+     * @return array | bool | mixed
      */
 
     public function prepare($statement, $attributes, $class_name = null, $one = false){
@@ -104,9 +103,9 @@ class MysqlDatabase extends Database {
         return $data;
     }
 
-    /*Exécute la fonction LastInsertId de PDO pour obtenir le dernier identifiant de la dernière ligne insérée dans la base de données.
+    /*Executes the LastInsertId function of PDO to get the last identifier of the last line inserted into the database.
         aide  http://php.net/manual/en/pdo.lastinsertid.php
-    retour chaine
+    return chaine
     */
     public function lastInsertId(){
         return $this->getPDO()->lastInsertId();

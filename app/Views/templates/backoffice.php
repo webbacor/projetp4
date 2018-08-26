@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
 
 <?php
     require ('htmlhead.php');
@@ -10,7 +10,7 @@
     
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
-            <!--navigation Accueil left-->
+            <!--navigation Home left-->
             <div class="navbar-header">
                 <img src="img/blogmini.png" alt="blocmini">
                 <a id="nav-home" class="navbar-brand" href="index.php">
@@ -27,7 +27,7 @@
                 <li><a id="lien-accueil" href="?p=users.logout"></span> Deconnexion</a></li>
             </ul>
 
-        </div><!-- fin container -->
+        </div><!-- end container -->
     </nav>
 
     <div class="container admin-title">
@@ -36,7 +36,7 @@
 
     <div class="container">
         <?= $content; ?>
-	</div><!-- fin container -->
+	</div><!-- end container -->
 
      <!--    script js-->
      <script src='js/backoffice.js'></script>

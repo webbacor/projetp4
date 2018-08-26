@@ -4,23 +4,23 @@ namespace App\Controller\Admin;
 
 use Core\HTML\BootstrapForm;
 
-/* La classe BilletsController est le contrôleur de l'entité Billet
- son rôle est d’obtenir des données du modèle et de les transférer pour qu'il soit visible 
+/* The TicketsController class is the controller of the Billet Entity
+ its role is to get data from the model and transfer it to be visible
  */
 
-// Extends BilletsController ajoute une vérification d'authentification dans AppController
+// Extends TicketsController adds an authentication check in AppController
 class BilletsController extends AppController{
- /* Constructeur BilletsController.
-   Définir le chemin de vue et le modèle via le constructeur parent et les modèles de chargement requis par ce contrôleur.
+ /* Builder TicketsController.
+   Define the view path and model via the parent constructor and load templates required by that controller.
      */
     public function __construct(){
-     // On appelle la méthode construct() de la classe parente   
+     // We call the construct () method of the parent class 
         parent::__construct();
-        //chargement du modele billet
+        // loading the ticket template
         $this->loadModel('billet');
     }
 
-/* la fonction index récupère toutes les lignes du modèle (classe BilletTable) et transfère les données pour quelles soient visibles*/
+/* the index function retrieves all the lines of the model (classTilletTable) and transfers the data for which are visible */
    
     public function index() {
 
@@ -31,7 +31,7 @@ class BilletsController extends AppController{
         $this->render('Admin.Billets.index', compact('posts', 'title'));
     }
 
-/* Cette fonction ajoute une ligne TITRE dans la table via le modèle (classe BilletTable) si le $_POST est présent.*/
+/* This function adds a TITLE line to the table via the template (BilletTable class) if the $ _POST is present.*/
     
     public function add(){
         if (!empty($_POST)) {
@@ -53,7 +53,7 @@ class BilletsController extends AppController{
         $this->render('Admin.Billets.edit', compact('form', 'title'));
     }
 
-  /* Cette fonction met à jour une ligne EDITION de la table via le modèle (classe BilletTable) si le $_POST est présent.*/
+  /* This function updates an EDITION line of the table via the template (BilletTable class) if the $ _POST is present.*/
 
     public function edit(){
 
@@ -68,12 +68,12 @@ class BilletsController extends AppController{
 
             $result = $this->billet->update($_GET['id'], $fields);
             
-            //header( "refresh:5;url=index.php?p=admin.Billets.index" );
+            
             header('Location: ' . $this->getLocation());
             exit;
         }
 
-        // le code ci-dessous n'est exécuté que si $ _POST est vide
+        // the code below is only executed if $ _POST is empty
         $post = $this->billet->find($_GET['id']);
 
         $title = 'Edition d\'un billet';
@@ -82,26 +82,27 @@ class BilletsController extends AppController{
         $this->render('Admin.Billets.edit', compact('form','title'));
     }
 
- /* cette fonction définit la page à déplacer en fonction de l'origine de l'appel (du front office ou du back office)
+ /* this function defines the page to move according to the origin of the call (front office or back office)
      *
-     * return $link URL du lien pour la redirection.
+     * return $ link URL of the link for the redirection.
      */
     
     public function getLocation() {
 
         $link = '';
 
-     // si l'appel par administrateur depuis le front office $ _GET ['from'] est défini.
+     // if the administrator call from the front office $ _GET ['from'] is set.
         if (isset($_GET['from'])) {
             $link = 'index.php?p='. $_GET['from'] . '&id=' . $_GET['id'];
-       /*sinon si $ _GET ['from'] n'est pas défini, l'appel provient du back-office.*/
+
+       /*otherwise if $ _GET ['from'] is not defined, the call comes from the back office.*/
         } else {
             $link = 'index.php?p=admin.billets.index';
         }
         return $link;
     }
 
-    /*Supprimer un billet et revenir à la liste des billets de rafraîchissement*/
+    /*Delete a ticket and return to the list of refreshment tickets*/
     public function delete(){
         if (!empty($_POST)) {
             $result = $this->billet->delete($_POST['id']);

@@ -1,7 +1,6 @@
 <?php
 namespace App;
-//Class Autoloader est chargé de charger automatiquement les classes nécessaires (en utilisant spl_autoload_register) pour app.
-
+// Class Autoloader is responsible for automatically loading the necessary classes (using spl_autoload_register) for app.
 class Autoloader{
 
     //cette fonction appelle la fonction spl_autoload_register
@@ -9,8 +8,8 @@ class Autoloader{
         spl_autoload_register(array(__CLASS__, 'autoload'));
     }
 
-    //fonction necessaire pour les besoins de la class.
-    //Nom de la classe de chaîne $ à charger
+    // function necessary for the needs of the class.
+    // Name of the string class $ to load
     
     static function autoload($class){
         if (strpos($class, __NAMESPACE__ . '\\') === 0){

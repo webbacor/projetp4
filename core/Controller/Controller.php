@@ -2,44 +2,44 @@
 
 namespace Core\Controller;
 
-//Class Controller est la classe mère de tous les contrôleurs. il implémente le contrôleur dans le modèle de conception MVC.
+//Class Controller is the mother class of all controllers. it implements the controller in the MVC design model.
 class Controller{
 
-    //$viewPath le répertoire principal de la vue.
+    //$viewPath the main directory of the view.
     protected $viewPath;
 
-    //$template le modèle pour la vue
+    //$template the model for the sight
     protected $template;
 
 
-// * cette fonction est chargée d'afficher les données.
-//$view affiche le nom et le chemin du fichier de vue.
-//$variables toutes les variables nécessaires à la vue.
+// * this function is responsible for displaying the data.
+// $ view displays the name and path of the view file.
+// $ variables all variables needed for the view.
     protected function render($view, $variables = []) {
 
-        // commence à mettre en mémoire tampon
+        // begins to buffer
         ob_start();
 
-        //extraire les variables du tableau
+        //extract the variables from the table
         extract($variables);
 
-        //réclame la vue
+        //ask for sight
         require($this->viewPath . str_replace('.', '/', $view) . '.php');
 
-        // place le tampon dans $content ($content est utilisé dans le modèle ci-dessous).
+        //place the buffer in $ content ($ content is used in the template below).
         $content = ob_get_clean();		
 
         //exiger le modèle pour l'affichage final
         require($this->viewPath . 'templates/' . $this->template . '.php');
     }
 
-    //interdire l'action
+    //prohibit action
     protected function forbidden(){
         header('HTTP/1.0 403 Forbidden');
         die('Accès interdit');
     }
 
-    //page non trouvée
+    //Page not found
     protected function notFound(){
         header('HTTP/1.0 404 Not Found');
         die('Page introuvable');

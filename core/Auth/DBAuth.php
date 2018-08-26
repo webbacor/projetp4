@@ -20,8 +20,8 @@ class DBAuth {
         return false;
     }
 
-//la fonction login vérifie dans la base de données si le nom et le mot de passe fournis par l'utilisateur sont corrects.
-//return boolean renvoie true si l'utilisateur existe et si le mot de passe est correct sinon retourne false.
+//the login function checks in the database if the name and password provided by the user are correct.
+// return boolean returns true if the user exists and the password is correct otherwise returns false.
    
     public function login($username, $password){
         $user = $this->db->prepare('SELECT * FROM t_user WHERE name = ?', [$username], null, true);
@@ -37,12 +37,12 @@ class DBAuth {
         return false;
     }
 
-    //Vérifiez si l'utilisateur est connecté.
+    //Check if the user is logged in.
     public function logged(){
         return isset($_SESSION['auth']);
     }
 
-    //Vérifie  si l'administrateur est connecté
+    //Check if the administrator is logged in
     public function isAdmin(){
 		if (!isset($_SESSION['role'])){
 			return false;
@@ -50,7 +50,7 @@ class DBAuth {
 		return ($_SESSION['role'] === 'admin');
 	}
 
-    //verifie si l'ulisateur est bloqué
+    //check if the user is blocked
     public function isLocked() {
         if (!isset($_SESSION['isLocked'])){
             return false;

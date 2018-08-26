@@ -1,38 +1,39 @@
 <?php
-
-//nom de package 
+ 
+// package name
 namespace App\Controller\Admin;
 
-//utiliser : 
+//use : 
 use \App;
 use \Core\Auth\DBAuth;
 
 /**
-Création d'une classe AppController 
- Class AppController est le contrôleur d'application du back office.
- Extends AppController ajoute une vérification d'authentification dans le constructeur.
+Creating an AppController class
+ Class AppController is the back office application controller.
+ Extends AppController adds an authentication check in the constructor.
 **/
 class AppController extends \App\Controller\AppController{
- /** Notre classe hérite des attributs et méthodes de \App\Controller\AppController
-     construction AppController
+ /**Our class inherits attributes and methods from \ App \ Controller \ AppController
+     AppController construction
      */
 
     public function __construct(){
 		
-        // On appelle la méthode construct() de la classe parente
+        // We call the construct () method of the parent class
         parent::__construct();
 		
-        //restreindre la construction a APP
+        // restrict building to APP
         $app = App::getInstance();
 
-        //Vérifie si l'utilisateur est administrateur dans la classe DBAuth.
+        // Check if the user is an administrator in the DBAuth class.
         $auth = new DBAuth($app->getDb());
-        //interdit  si il n'est pas administrateur
+        
+        // forbidden if he is not an administrator
         if(!$auth->isAdmin()){
             $this->forbidden();
         }
 		
-		//Nouveau modèle pour le back office
+		// New template for the back office
 		$this->template = 'backoffice';
     }
 

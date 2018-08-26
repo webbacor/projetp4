@@ -3,11 +3,11 @@
 use Core\Config;
 use Core\Database\MysqlDatabase;
 
-// Class App est chargé d'effectuer l'initialisation de l'application et des opérations principales:
-// enregistrer les 'autoloaders'
-// commencer la session
-// créer une instance de base de données et de table *
-// aide methode static https://www.youtube.com/watch?v=7E_0FvRotl4
+// Class App is responsible for initializing the application and main operations:
+// register the 'autoloaders'
+// start the session
+// create a database and table instance *
+// help method static https://www.youtube.com/watch?v=7E_0FvRotl4
   
 class App {
 
@@ -15,10 +15,10 @@ class App {
     private static $_instance;
 
 
-//cette fonction statique implémente le modèle de conception singleton pour cette classe
-//création de l'unique objet représentant l'accès à la base de données, et de stocker la référence à cet objet dans une variable globale du programme afin que l'on puisse y accéder de n'importe où dans le script. 
-//   aide https://apprendre-php.com/tutoriels/tutoriel-45-singleton-instance-unique-d-une-classe.html
-// return App l'instance statique de la classe App
+// this static function implements the singleton design pattern for this class
+// create the single object representing access to the database, and store the reference to this object in a global variable of the program so that it can be accessed from anywhere in the script.
+// help https://learning-php.com/tutorials/select-handle-45-singleton-instance-unique-of-class.html
+// return App the static instance of the App class
   
     public static function getInstance(){
         if(is_null(self::$_instance)){
@@ -27,8 +27,8 @@ class App {
         return self::$_instance;
     }
 
-//démarrer la session et charger l'autochargeur (conçu pour charger automatiquement toutes les autres classes)
-//return vide
+// start the session and load the autoloader (designed to automatically load all other classes)
+// return empty
      
     public static function load(){
 		session_start();
@@ -39,24 +39,23 @@ class App {
     }
 
 
-// Responsable de la gestion des erreurs
-//$error l'erreur à afficher
-   
+// Responsible for error management
+// $ error the error to display
     public static function error($error = ""){
 		echo $error;
 	}
 
-//fabrication pour la classe de table
-//$name le nom de la classe recherchée
-//@return \Core\Table\Table  à la classe table
+// manufacturing for the table class
+// $ name the name of the class sought
+// @ return \ Core \ Table \ Table to the table class
 
     public function getTable($name){
         $class_name = '\App\\Table\\' . ucfirst($name) . 'Table';
         return new $class_name($this->getDb());
     }
 
-//fabrication pour la classe Mysqldatabase 
-//return a PDO class
+// build for Mysqldatabase class
+// return a PDO class
 	
     public function getDb(){
         $config = Config::getInstance(ROOT . '/config/config.php');
@@ -66,8 +65,8 @@ class App {
         return $this->db_instance;
     }
 
-//fonction pour debuger "espion"
-//contenu du fichier $text
+// function to debug "spy"
+// contents of the $ text file
      
     public static function spy($text){
         file_put_contents("spy.log", $text);

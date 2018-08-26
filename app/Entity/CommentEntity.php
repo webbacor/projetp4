@@ -4,25 +4,26 @@ namespace App\Entity;
 
 use Core\Entity\Entity;
 
-//utilisée comme objet de transfert de données pour l’entité des commentaires
+// used as a data transfer object for the comment entity
 class CommentEntity Extends Entity {
+
     //id commentaire
     protected $comId;	
     
-    //contenu commentaire.
+    //content comment.
     protected $content;
 	
-    //Nom dans le commentaire
+    //name in comment
     protected $name;
 	
-	//date dans le commentaire
+	//date in comment
     protected $commentDate;
 
 
 
-//fonction publique getId 
-// retourne $this-> id;  
-
+// public function getId
+// return $ this-> id;
+    
     public function getComId() {
         return $this->comId;
     }

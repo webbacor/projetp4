@@ -7,7 +7,7 @@ $sql = [	'content' => $_POST['content'],
 			'usr_id'  => $_POST['usr_id']
 		];
 
-var_dump($sql);//affiche les informations structurées d'une variable, y compris son type
+var_dump($sql);//display the structured information of a variable, including its type
 
 if (!empty($_POST)){
 	$commentTable->create($sql);		

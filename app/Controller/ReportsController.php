@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use Core\Controller\Controller;
 
-/* class ReportController est le contrôleur de l'entité de rapport*/
-//Extends ajoute une vérification d'authentification 
+/* class ReportController is the controller of the reporting entity*/
+// Extends adds authentication verification
 class ReportsController extends AppController{
 
     public function __construct(){
@@ -15,14 +15,14 @@ class ReportsController extends AppController{
         $this->loadModel('Report');
     }
 
-    //ajouter un rapport pour le commentaire
+    // add a report for the comment
   
     public function add(){
 		
 		$res = $this->Report->add($_GET['comId'], $_SESSION['auth']);
 		
 		if ($res){
-			// En cas de succès, on actualise les données via la méthode show du contrôleur
+			// If successful, update the data via the controller's show method
 			$bc = new BilletsController;
 			$bc->show();
 		} else {
@@ -32,7 +32,7 @@ class ReportsController extends AppController{
 		}		
 	}
 
-     //Annuler le rapport pour le commentaire
+     // Cancel the report for the comment
 	
 	public function cancel(){
 		

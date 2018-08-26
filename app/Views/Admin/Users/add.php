@@ -1,7 +1,7 @@
 <!--  View to add a user-->
 <form method="post">
     <?= $form->input('name', 'Nom ou Pseudo *', null, true); ?>
-    <!--<?=// $form->input('email', 'Email *',['type' => 'email'], true); ?>-->
+   
     <?= $form->input('password', 'Mot de passe *',['type' => 'password'], true); ?>
     <?= $form->select('role', 'Rôle', ['user' => 'Utilisateur', 'admin' => 'administrateur' ]) ; ?>
 

@@ -1,5 +1,5 @@
 <?php
-// boucle des billets
+// loop tickets
 foreach ($posts as $billet): ?>
     <article>
         <div class="panel panel-secondary">
@@ -11,7 +11,7 @@ foreach ($posts as $billet): ?>
                 <p><a href="<?php echo $billet->getURL() ?>"><span>Voir la suite et commentez...</span></a></p>
             </div>
             <?php
-            //lien pour l'administrateur
+            // link for the administrator
                 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
                     <div class="panel-footer">
                         <a href="?p=admin.billets.edit&id=<?= $billet->getId() . '&from=billets.index' ; ?>"><span class="glyphicon glyphicon-edit"></span> Editer</a>
